@@ -17,10 +17,14 @@ namespace AutoProductSearchCart.Hooks
         [BeforeScenario]
         public void BeforeScenario()
         {
+             
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("--start-maximized", "--Incognito");
             options.AddArguments("--no-sandbox");
             options.AddArgument("--headless");
+            options.AddArguments("disable-infobars");
+            options.AddExcludedArgument("enable-automation");
+            options.AddArguments("--disable-dev-shm-usage");
             Driver = new ChromeDriver(options);
             container.RegisterInstanceAs(Driver);
         }
