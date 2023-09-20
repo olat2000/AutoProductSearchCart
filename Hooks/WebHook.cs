@@ -19,6 +19,8 @@ namespace AutoProductSearchCart.Hooks
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("--start-maximized", "--Incognito");
+            options.AddArguments("--no-sandbox");
+            options.AddArgument("--headless");
             Driver = new ChromeDriver(options);
             container.RegisterInstanceAs(Driver);
         }
