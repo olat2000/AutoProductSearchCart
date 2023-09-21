@@ -21,7 +21,7 @@ namespace AutoProductSearchCart.Hooks
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("--start-maximized", "--Incognito");
             options.AddArguments("--no-sandbox");
-            options.AddArgument("--headless");
+            //options.AddArgument("--headless");
             options.AddArguments("disable-infobars");
             options.AddExcludedArgument("enable-automation");
             options.AddArguments("--disable-dev-shm-usage");

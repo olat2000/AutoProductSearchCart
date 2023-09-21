@@ -2,6 +2,7 @@
 using AutoProductSearchCart.Support;
 using BoDi;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace AutoProductSearchCart.PageObjects
 {
@@ -21,7 +22,8 @@ namespace AutoProductSearchCart.PageObjects
         IWebElement productBttn => Driver!.FindthisElement(By.XPath("//*[@href='/products']"));
         IWebElement searchBar => Driver!.FindthisElement(By.Id("search_product"));
         IWebElement search => Driver!.FindthisElement(By.CssSelector("[id='submit_search']"));
-        IWebElement addToCart => Driver!.FindthisElement(By.XPath("(//a[@data-product-id='33'])[1]"));
+        IWebElement viewProduct => Driver!.FindthisElement(By.CssSelector("a[href='/product_details/33']"));
+        IWebElement addToCart => Driver!.FindthisElement(By.CssSelector("button[type='button']"));
         IWebElement viewCart => Driver!.FindthisElement(By.XPath("(//*[@href='/view_cart'])[2]"));
 
         public void NavigateToUrl() => 
@@ -59,7 +61,8 @@ namespace AutoProductSearchCart.PageObjects
         
         public bool ValidateReelatedProductsAreVisible() =>
              Driver!.Url.Equals("https://www.automationexercise.com/products?search=Jeans");
-
+        public void ClickViewProduct() => viewProduct.ClicktheElement();
+       
         public void ClickAddToCart() => addToCart.ClicktheElement();
 
         public void ClickViewCart() => viewCart.ClicktheElement();

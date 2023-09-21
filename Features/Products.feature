@@ -15,6 +15,7 @@ Scenario: Search for Products
        And I enter product name in search bar 
     When I click search button
     Then related products are visible
+       And I click on view product
        And I add the product to the cart
        And I click on view cart
     Then product should be visibled

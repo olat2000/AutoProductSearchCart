@@ -3,6 +3,7 @@ using AutoProductSearchCart.PageObjects;
 using BoDi;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace AutoProductSearchCart.StepDefinitions
 {
@@ -76,6 +77,12 @@ namespace AutoProductSearchCart.StepDefinitions
         {
             Thread.Sleep(1000);
             Assert.True(productsPage.ValidateReelatedProductsAreVisible());
+        }
+        [Then(@"I click on view product")]
+        public void ThenIClickOnViewProduct()
+        {
+
+            productsPage.ClickViewProduct();
         }
 
         [Then(@"I add the product to the cart")]
